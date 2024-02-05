@@ -31,6 +31,8 @@ module Adornable
   end
 
   def method_added(method_name)
+    super
+    
     machinery = adornable_machinery # for local variable
     return unless machinery.accumulated_decorators?
 
@@ -45,8 +47,6 @@ module Adornable
       bound_method = original_method.bind(self)
       machinery.run_decorated_instance_method(bound_method, *args, **kwargs)
     end
-
-    super
   end
 
   def singleton_method_added(method_name)
