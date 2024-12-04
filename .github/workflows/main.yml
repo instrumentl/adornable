@@ -16,7 +16,7 @@ jobs:
   build:
     name: Run RSpec tests and RuboCop lints
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     strategy:
       matrix:
@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Ruby v${{ matrix.ruby-version }}
         uses: ruby/setup-ruby@v1
