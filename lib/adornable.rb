@@ -32,7 +32,7 @@ module Adornable
 
   def method_added(method_name)
     super
-    
+
     machinery = adornable_machinery # for local variable
     return unless machinery.accumulated_decorators?
 
